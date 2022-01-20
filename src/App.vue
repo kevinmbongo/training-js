@@ -84,7 +84,7 @@ const destructureObject = computed(() => {
       id: 10,
       attributes: [
         {
-          name: "name",
+          name: "name1",
           value: "John",
           comments: {
             id: 1,
@@ -105,7 +105,7 @@ const destructureObject = computed(() => {
           },
         },
         {
-          name: "name",
+          name: "name2",
           value: "John",
           comments: {
             id: 1,
@@ -126,7 +126,7 @@ const destructureObject = computed(() => {
           },
         },
         {
-          name: "name",
+          name: "name3",
           value: "John",
           comments: {
             id: 1,
@@ -147,7 +147,7 @@ const destructureObject = computed(() => {
           },
         },
         {
-          name: "name",
+          name: "name4",
           value: "John",
           comments: {
             id: 1,
@@ -184,7 +184,7 @@ const destructureObject = computed(() => {
           },
         },
         {
-          name: "name",
+          name: "name5",
           value: "John",
           comments: {
             id: 1,
@@ -273,8 +273,17 @@ const destructureObject = computed(() => {
     </section>
 
     <section>
-      <h2>Destructure object</h2>
-      <p>{{ destructureObject }}</p>
+      <aside
+        v-for="(blog, index) in destructureObject"
+        :key="index"
+        style="margin: auto"
+      >
+        <h2>{{ blog.name }}</h2>
+        <p>
+          {{ blog.value }}
+        </p>
+        <span> Comments: {{ blog.comments.attributes }} </span>
+      </aside>
     </section>
   </article>
 </template>
