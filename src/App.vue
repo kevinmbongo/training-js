@@ -282,7 +282,12 @@ const destructureObject = computed(() => {
         <p>
           {{ blog.value }}
         </p>
-        <span> Comments: {{ blog.comments.attributes }} </span>
+        <span> Comments: </span>
+        <ul>
+          <li v-for="(comment, index) in blog.comments.attributes" :key="index">
+            {{ comment.value }}
+          </li>
+        </ul>
       </aside>
     </section>
   </article>
